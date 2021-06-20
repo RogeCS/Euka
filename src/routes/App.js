@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Switch, HashRouter } from "react-router-dom";
-import Index from "../components/Index.jsx";
+import Dashboard from "../components/Dashboard.jsx";
 
 import "../styles/global/App.scss";
 
 const App = () => (
   <HashRouter>
     <Switch>
-      <Route path="/" component={Index} />
+      <Route path="/" component={Dashboard} />
     </Switch>
   </HashRouter>
 );
