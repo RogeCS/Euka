@@ -7,10 +7,10 @@ import "../styles/components/Sidebar.scss";
 const Sidebar = () => {
   return (
     <div className="dashboard-sidebar">
+      <div className="dashboard-sidebar__logo">
+        <Logo color="primary" />
+      </div>
       <ul className="dashboard-sidebar__list">
-        <li>
-          <Logo color="primary" />
-        </li>
         {SidebarData.map((val, key) => (
           <li
             key={key}
