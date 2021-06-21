@@ -1,5 +1,6 @@
 import React from "react";
-import { FaUser } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
+import { MdNotifications, MdInbox } from "react-icons/md";
 import DarkLogo from "../assets/static/euka-dark-logo.svg";
 
 import "../styles/components/Header.scss";
@@ -15,24 +16,27 @@ const Header = () => {
       <nav className="dashboard-navbar">
         <ul className="dashboard-navbar__list">
           <li className="dashboard-navbar__bullet">
+            <p className="dashboard-navbar__message">welcome to euka!</p>
+          </li>
+          <li className="dashboard-navbar__bullet">
             <a href="/" className="dashboard-navbar__link">
-              link 1
+              <MdInbox />
             </a>
           </li>
           <li className="dashboard-navbar__bullet">
             <a href="/" className="dashboard-navbar__link">
-              link 2
+              <MdNotifications />
             </a>
           </li>
           <li className="dashboard-navbar__bullet">
             <a href="/" className="dashboard-navbar__link">
-              link 3
+              <div className="logout">
+                <FiLogOut />
+                <p className="logout__text">log out</p>
+              </div>
             </a>
           </li>
         </ul>
-        <div className="dashboard-navbar__profile">
-          <FaUser />
-        </div>
       </nav>
     </div>
   );

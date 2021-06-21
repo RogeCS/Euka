@@ -3,7 +3,7 @@
 .dashboard-header {
   align-items: center;
   border-bottom: 1px solid rgba(129, 129, 129, 0.246);
-  color: $color;
+  color: $dark-gray;
   display: flex;
   height: $header-height;
   justify-content: space-between;
@@ -34,16 +34,30 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 .dashboard-navbar__bullet {
-  margin: 0 20px;
+  margin: 0 10px;
+  display: flex;
 }
 
 .dashboard-navbar__link {
-  color: $color;
+  color: $dark-gray;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $secondary;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.logout {
+  display: flex;
+  align-items: center;
   transition: 0.3s ease-in-out;
 
   &:hover {
@@ -52,11 +66,6 @@
   }
 }
 
-.dashboard-navbar__profile {
-  transition: 0.3s ease-in-out;
-
-  &:hover {
-    color: $secondary;
-    transition: 0.3s ease-in-out;
-  }
+.logout__text {
+  margin-left: 5px;
 }
