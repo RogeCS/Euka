@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "./Logo.jsx";
 import { SidebarData } from "../code/SidebarData";
 
 import "../styles/components/Sidebar.scss";
@@ -6,6 +7,9 @@ import "../styles/components/Sidebar.scss";
 const Sidebar = () => {
   return (
     <div className="dashboard-sidebar">
+      <div className="dashboard-sidebar__logo">
+        <Logo color="primary" />
+      </div>
       <ul className="dashboard-sidebar__list">
         {SidebarData.map((val, key) => (
           <li
