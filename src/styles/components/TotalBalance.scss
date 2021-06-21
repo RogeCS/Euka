@@ -1,0 +1,54 @@
+@import "../global/variables.scss";
+.total-balance {
+  background-color: $white;
+  color: $color;
+  width: 350px;
+  height: 170px;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+}
+
+.total-balance__content {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.total-balance__top-line {
+  color: $dark-gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-balance__user-name {
+  font-size: 0.9rem;
+}
+
+.total-balance__settings {
+  cursor: pointer;
+}
+
+.amount-layout {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.amount-layout__money {
+  color: $black;
+}
+
+.amount-layout__currency {
+  color: $dark-gray;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.total-balance__bottom-line {
+  color: $dark-gray;
+  font-size: 1rem;
+  margin-top: 3px;
+}

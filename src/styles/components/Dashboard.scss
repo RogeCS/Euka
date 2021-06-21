@@ -1,6 +1,20 @@
 @import "../global/variables.scss";
 
+//local variables
+$margin-container: 30px;
+$width: calc(100% - calc(2 * #{$margin-container}) - #{$sidebar-width});
+$height: calc(100% - calc(2 * #{$margin-container}) - #{$header-height});
+
 .dashboard-layout {
   height: 100vh;
   width: 100vw;
+}
+
+.dashboard-content {
+  margin: $margin-container;
+  position: fixed;
+  top: $header-height;
+  left: $sidebar-width;
+  width: $width;
+  height: $height;
 }
