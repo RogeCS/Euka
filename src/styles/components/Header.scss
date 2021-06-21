@@ -14,14 +14,21 @@
   width: calc(100% - #{$sidebar-width});
 }
 
-.logo {
-  align-items: center;
+.dashboard-header__search {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  color: $dark-gray;
 }
 
-.logo__image {
-  height: 40px;
+.dashboard-header__search-input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  color: $dark-gray;
+
+  &::placeholder {
+    color: $dark-gray;
+  }
 }
 
 .dashboard-navbar {

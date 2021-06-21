@@ -1,17 +1,19 @@
 import React from "react";
 import { FiLogOut } from "react-icons/fi";
-import { MdNotifications, MdInbox } from "react-icons/md";
-import DarkLogo from "../assets/static/euka-dark-logo.svg";
+import { MdNotifications, MdInbox, MdSearch } from "react-icons/md";
 
 import "../styles/components/Header.scss";
 
 const Header = () => {
   return (
     <div className="dashboard-header">
-      <div className="logo">
-        <a href="/" className="logo__link">
-          <img className="logo__image" src={DarkLogo} alt="euka logo" />
-        </a>
+      <div className="dashboard-header__search">
+        <MdSearch />
+        <input
+          className="dashboard-header__search-input"
+          type="text"
+          placeholder="Search"
+        ></input>
       </div>
       <nav className="dashboard-navbar">
         <ul className="dashboard-navbar__list">
