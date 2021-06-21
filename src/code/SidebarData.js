@@ -11,16 +11,16 @@ export const SidebarData = [
   {
     title: "Analytics",
     icon: <ImStatsDots />,
-    link: "/",
+    link: "/analytics",
   },
   {
     title: "Mailbox",
     icon: <MdMail />,
-    link: "/",
+    link: "/mailbox",
   },
   {
     title: "Family",
     icon: <MdGroup />,
-    link: "/",
+    link: "/family",
   },
 ];
