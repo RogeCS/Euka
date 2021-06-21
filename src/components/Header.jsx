@@ -16,9 +16,6 @@ const Header = () => {
       <nav className="dashboard-navbar">
         <ul className="dashboard-navbar__list">
           <li className="dashboard-navbar__bullet">
-            <p className="dashboard-navbar__message">welcome to euka!</p>
-          </li>
-          <li className="dashboard-navbar__bullet">
             <a href="/" className="dashboard-navbar__link">
               <MdInbox />
             </a>

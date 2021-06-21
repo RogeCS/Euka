@@ -3,7 +3,7 @@
 .dashboard-sidebar {
   height: 100%;
   width: $sidebar-width;
-  background: $color;
+  background-color: $white;
 }
 
 .dashboard-sidebar__list {
@@ -14,24 +14,25 @@
 
 .dashboard-sidebar__row {
   align-items: center;
-  color: $gray;
+  color: $dark-color;
   display: flex;
   flex-direction: row;
-  height: 50px;
+  height: $header-height;
   justify-content: center;
   list-style-type: none;
   margin: 0;
-  transition: all 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
   width: 100%;
 
   &:hover {
+    background-color: $gray;
     cursor: pointer;
-    background-color: $dark-color;
-    transition: all 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
 }
 .dashboard-sidebar__row--active {
-  background-color: $light-color;
+  border-right: 3px solid $secondary;
+  color: $secondary;
 }
 
 .dashboard-sidebar__icon {
