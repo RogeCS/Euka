@@ -24,7 +24,15 @@ const Sidebar = () => {
             }}
           >
             <div className="dashboard-sidebar__icon">{val.icon}</div>
-            <div className="dashboard-sidebar__title">{val.title}</div>
+            <div
+              className={`dashboard-sidebar__title ${
+                window.location.pathname == val.link
+                  ? "dashboard-sidebar__title--active"
+                  : ""
+              }`}
+            >
+              {val.title}
+            </div>
           </li>
         ))}
       </ul>
