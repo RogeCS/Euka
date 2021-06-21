@@ -1,9 +1,15 @@
+//Font
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300;400;700&display=swap");
-
 $theme-font: "Encode Sans Expanded", sans-serif;
+
+//Application color palette
 $white: #ffffff;
-$gray: #e4e4e4;
+$gray: #ebebeb;
 $dark-color: #1d2731;
 $color: #0b3c5d;
 $light-color: #328cc1;
 $secondary: #d9b310;
+
+//fixed sizes
+$header-height: 60px;
+$sidebar-width: 250px;

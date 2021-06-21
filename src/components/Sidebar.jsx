@@ -4,7 +4,7 @@ import "../styles/components/Sidebar.scss";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="dashboard-sidebar">
       <div></div>
     </div>
   );

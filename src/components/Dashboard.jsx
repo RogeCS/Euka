@@ -7,8 +7,8 @@ import "../styles/components/Dashboard.scss";
 const Dashboard = () => {
   return (
     <div className="dashboard-layout">
-      <Header />
       <Sidebar />
+      <Header />
     </div>
   );
 };
