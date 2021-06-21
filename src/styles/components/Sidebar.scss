@@ -14,18 +14,20 @@
 
 .dashboard-sidebar__row {
   align-items: center;
-  color: $white;
+  color: $gray;
   display: flex;
   flex-direction: row;
   height: 50px;
   justify-content: center;
   list-style-type: none;
   margin: 0;
+  transition: all 0.1s ease-in-out;
   width: 100%;
 
   &:hover {
     cursor: pointer;
     background-color: $dark-color;
+    transition: all 0.1s ease-in-out;
   }
 }
 .dashboard-sidebar__row--active {
