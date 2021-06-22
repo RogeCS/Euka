@@ -5,10 +5,7 @@ import { SidebarData } from "../code/SidebarData";
 
 import "../styles/components/Sidebar.scss";
 
-const Sidebar = () => {
-  const [sidebar, setSidebar] = React.useState(true);
-  const toggleSidebar = () => setSidebar(!sidebar);
-
+const Sidebar = ({ sidebar, toggleSidebar }) => {
   return (
     <div
       className={

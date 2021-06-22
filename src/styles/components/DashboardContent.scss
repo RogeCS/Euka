@@ -1,0 +1,24 @@
+@import "../global/variables.scss";
+$margin-container: 30px;
+$width: calc(100% - calc(2 * #{$margin-container}) - #{$sidebar-width});
+$height: calc(100% - calc(2 * #{$margin-container}) - #{$header-height});
+
+.dashboard-content {
+  margin: $margin-container;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 200ms;
+}
+
+.dashboard-content--margin {
+  margin-left: calc(#{$sidebar-width} + #{$margin-container});
+  margin-right: $margin-container;
+  margin-top: $margin-container;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 200ms;
+}

@@ -4,9 +4,13 @@ import { MdNotifications, MdInbox, MdSearch } from "react-icons/md";
 
 import "../styles/components/Header.scss";
 
-const Header = () => {
+const Header = ({ sidebar }) => {
   return (
-    <div className="dashboard-header">
+    <div
+      className={`dashboard-header ${
+        sidebar ? "dashboard-header--margin" : ""
+      }`}
+    >
       <div className="dashboard-header__search">
         <MdSearch />
         <input

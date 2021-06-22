@@ -16,7 +16,7 @@ const Transactions = () => {
       <NewTransaction transaction={transaction} onClick={handleClick} />
       <div className="make-transaction">
         <Button title="new transaction" type="primary" onClick={handleClick} />
-        <Button title="settings" type="secondary" onClick={handleClick} />
+        <Button title="settings" type="secondary" />
       </div>
       <div className="transactions">
         <ul className="transactions__list">

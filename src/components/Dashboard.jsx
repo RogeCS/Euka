@@ -1,20 +1,16 @@
 import React from "react";
-import Header from "./Header.jsx";
-import Sidebar from "./Sidebar.jsx";
-import TotalBalance from "./TotalBalance.jsx";
-import Transactions from "./Transactions.jsx";
+import MenuLayout from "./MenuLayout.jsx";
+import DashboardContent from "./DashboardContent.jsx";
 
 import "../styles/components/Dashboard.scss";
 
 const Dashboard = () => {
+  const [sidebar, setSidebar] = React.useState(false);
+  const toggleSidebar = () => setSidebar(!sidebar);
   return (
     <div className="dashboard-layout">
-      <Header />
-      <Sidebar />
-      <div className="dashboard-content">
-        <TotalBalance />
-        <Transactions />
-      </div>
+      <MenuLayout sidebar={sidebar} toggleSidebar={toggleSidebar} />
+      <DashboardContent sidebar={sidebar} />
     </div>
   );
 };

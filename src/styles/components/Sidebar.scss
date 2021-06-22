@@ -1,21 +1,17 @@
 @import "../global/variables.scss";
 
 .dashboard-sidebar {
-  height: 100%;
-  width: $sidebar-width;
+  height: 100vh;
+  min-width: $sidebar-width;
   background-color: $white;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
 }
 
 .dashboard-sidebar--open {
   transition: 200ms;
   left: 0;
-}
-
-.dashboard-sidebar--close {
-  left: -$sidebar-width;
-  transition: 200ms;
+  user-select: none;
 }
 
 .dashboard-sidebar--close {
@@ -26,7 +22,7 @@
 .dashboard-sidebar__toggle {
   align-items: center;
   color: $white;
-  background-color: $dark-color;
+  background-color: $dark-gray;
   border-radius: 0 10px 10px 0;
   display: flex;
   font-size: 1rem;
@@ -34,8 +30,14 @@
   justify-content: center;
   padding-right: 3px;
   position: absolute;
-  left: $sidebar-width;
+  left: 100%;
+  transition: 0.3s ease-in-out;
   width: 1.5rem;
+
+  &:hover {
+    background-color: $dark-color;
+    transition: 0.3s ease-in-out;
+  }
 }
 
 .dashboard-sidebar--open .dashboard-sidebar__open {

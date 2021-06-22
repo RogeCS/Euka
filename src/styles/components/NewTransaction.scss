@@ -2,14 +2,20 @@
 
 .new-transaction {
   color: $white;
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
   padding: 10px 10px;
   position: absolute;
-  height: 500px;
-  border-radius: 10px;
-  overflow: hidden;
-  top: -110%;
+  top: -100%;
   width: 350px;
+  overflow-y: scroll;
   z-index: 1;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
 }
 
 .new-transaction--active {
@@ -95,14 +101,12 @@
   cursor: pointer;
   background-color: $black;
   border-radius: 50px;
-  bottom: 20px;
   display: grid;
   font-size: 0.8rem;
   font-weight: 600;
   height: 30px;
+  margin-left: auto;
   place-content: center;
-  position: absolute;
-  right: 20px;
   transition: all 0.1s ease-in-out;
   width: 90px;
 
