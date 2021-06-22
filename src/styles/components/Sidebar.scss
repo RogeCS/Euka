@@ -4,7 +4,48 @@
   height: 100%;
   width: $sidebar-width;
   background-color: $white;
+  position: fixed;
+  z-index: 1;
 }
+
+.dashboard-sidebar--open {
+  transition: 200ms;
+  left: 0;
+}
+
+.dashboard-sidebar--close {
+  left: -$sidebar-width;
+  transition: 200ms;
+}
+
+.dashboard-sidebar--close {
+  left: -$sidebar-width;
+  transition: 200ms;
+}
+
+.dashboard-sidebar__toggle {
+  align-items: center;
+  color: $white;
+  background-color: $dark-color;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  font-size: 1rem;
+  height: $header-height;
+  justify-content: center;
+  padding-right: 3px;
+  position: absolute;
+  left: $sidebar-width;
+  width: 1.5rem;
+}
+
+.dashboard-sidebar--open .dashboard-sidebar__open {
+  display: none;
+}
+
+.dashboard-sidebar--close .dashboard-sidebar__close {
+  display: none;
+}
+
 .dashboard-sidebar__logo {
   align-items: center;
   display: flex;
