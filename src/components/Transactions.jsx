@@ -6,10 +6,9 @@ import { numberWithCommas } from "../code/Functions.js";
 import "../styles/components/Transactions.scss";
 
 const Transactions = () => {
-  const [transaction, setTransaction] = React.useState(true);
-  const handleClick = (event, value) => {
+  const [transaction, setTransaction] = React.useState(false);
+  const handleClick = () => {
     setTransaction(!transaction);
-    console.log(transaction);
   };
 
   return (

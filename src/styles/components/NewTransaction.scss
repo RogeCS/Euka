@@ -1,6 +1,7 @@
 @import "../global/variables.scss";
 
 .new-transaction {
+  color: $white;
   padding: 10px 10px;
   position: absolute;
   height: 500px;
@@ -32,7 +33,106 @@
   width: 2rem;
 
   &:hover {
-    color: $dark-color;
+    color: $gray;
     transition: 0.3s ease-in-out;
+  }
+}
+.new-transaction__section {
+  margin: 0 15px 30px 15px;
+}
+
+.new-transaction__title {
+  margin-bottom: 10px;
+  color: $black;
+}
+
+.new-transaction__header {
+  position: relative;
+  margin-bottom: 10px;
+  top: -10px;
+}
+
+.new-transaction__type-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.new-transaction__type-button {
+  color: $light-gray;
+  cursor: pointer;
+  border: 1px solid $light-gray;
+  border-radius: 50px;
+  display: grid;
+  font-size: 0.8rem;
+  font-weight: 600;
+  height: 30px;
+  place-content: center;
+  transition: all 0.1s ease-in-out;
+  width: 90px;
+
+  &:hover {
+    border: 2px solid $black;
+  }
+}
+
+.new-transaction__type-button--income {
+  color: $light-gray;
+  background-color: $black;
+  border: 1px solid $black;
+  transition: all 0.3s ease-in-out;
+}
+
+.new-transaction__type-button--expense {
+  color: $light-gray;
+  background-color: $black;
+  border: 1px solid $black;
+  transition: all 0.3s ease-in-out;
+}
+
+.new-transaction__finish-button {
+  color: $light-gray;
+  cursor: pointer;
+  background-color: $black;
+  border-radius: 50px;
+  bottom: 20px;
+  display: grid;
+  font-size: 0.8rem;
+  font-weight: 600;
+  height: 30px;
+  place-content: center;
+  position: absolute;
+  right: 20px;
+  transition: all 0.1s ease-in-out;
+  width: 90px;
+
+  &:hover {
+    transition: all 0.1s ease-in-out;
+    width: 100px;
+    border: 2px solid $light-gray;
+  }
+}
+
+.new-transaction__form-group {
+  position: relative;
+  width: 80%;
+}
+
+.new-transaction__form-field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $white;
+  outline: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $white;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: $gray;
+    font-weight: 300;
+    font-size: 0.9rem;
   }
 }

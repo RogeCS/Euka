@@ -1,8 +1,10 @@
 //Font
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 //$theme-font: "Encode Sans Expanded", sans-serif;
-$theme-font: "Lato", sans-serif;
+//$theme-font: "Lato", sans-serif;
+$theme-font: "DM Sans", sans-serif;
 
 //Application color palette
 $white: #ffffff;
@@ -13,6 +15,13 @@ $dark-color: #0b3c5d;
 $color: #194b6d;
 $light-color: #328cc1;
 $secondary: #d9b310;
+
+//extra colors
+$green: #7de5da;
+$red: #ff6173;
+$light-gray: #fbfbfb;
+$light-blue: #9191af;
+$dark-blue: #2a2858;
 
 //fixed sizes
 $header-height: 50px;

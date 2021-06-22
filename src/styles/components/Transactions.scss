@@ -70,7 +70,7 @@ $make-transactions-heigh: 80px;
 
 .transaction__amount {
   align-self: end;
-  color: rgba(0, 155, 0, 0.822);
+  color: $green;
   font-size: 0.8rem;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -80,7 +80,7 @@ $make-transactions-heigh: 80px;
 }
 
 .transaction__amount--expense {
-  color: rgba(192, 0, 0, 0.842);
+  color: $red;
 }
 
 .transactions__end {
