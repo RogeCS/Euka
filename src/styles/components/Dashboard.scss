@@ -17,4 +17,7 @@ $height: calc(100% - calc(2 * #{$margin-container}) - #{$header-height});
   left: $sidebar-width;
   width: $width;
   height: $height;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

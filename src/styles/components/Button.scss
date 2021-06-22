@@ -1,0 +1,31 @@
+@import "../global/variables.scss";
+
+.button {
+  background-color: $black;
+  color: $white;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.button--secondary {
+  background-color: $white;
+  color: $black;
+  border: 1px solid $black;
+  &:hover {
+    background-color: $gray;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.button__text {
+  text-transform: capitalize;
+}

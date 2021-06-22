@@ -1,0 +1,94 @@
+@import "../global/variables.scss";
+$make-transactions-heigh: 80px;
+
+.transactions-layout {
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+  height: 500px;
+  position: relative;
+  width: 350px;
+  overflow: hidden;
+}
+
+.make-transaction {
+  height: $make-transactions-heigh;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.transactions {
+  height: calc(100% - #{$make-transactions-heigh});
+  margin-top: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+}
+
+.transactions__list {
+  color: $black;
+  list-style-type: none;
+  margin: 0px 10px;
+}
+
+.transaction__bullet {
+  align-items: center;
+  display: grid;
+  font-size: 1rem;
+  gap: 5px;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 50px 20px;
+}
+
+.transaction__thumbnail {
+  background-color: #0675cf50;
+  color: #0675cf;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+.transactions__content {
+  align-self: flex-end;
+}
+.transaction__title {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.transaction__date {
+  color: $dark-gray;
+  font-size: 0.7rem;
+}
+
+.transaction__amount {
+  align-self: end;
+  color: rgba(0, 155, 0, 0.822);
+  font-size: 0.8rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: end;
+  position: relative;
+  bottom: 35px;
+}
+
+.transaction__amount--expense {
+  color: rgba(192, 0, 0, 0.842);
+}
+
+.transactions__end {
+  border-radius: 100%;
+  display: grid;
+  height: 10px;
+  width: 10px;
+  margin: 0 auto 25px auto;
+  place-items: center;
+  background-color: #d4d4d48e;
+}

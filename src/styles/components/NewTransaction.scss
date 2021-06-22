@@ -1,0 +1,38 @@
+@import "../global/variables.scss";
+
+.new-transaction {
+  padding: 10px 10px;
+  position: absolute;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  top: -110%;
+  width: 350px;
+  z-index: 1;
+}
+
+.new-transaction--active {
+  color: $white;
+  background-color: $secondary;
+  top: 0;
+  transition: 200ms;
+}
+
+.new-transaction--hidden {
+  transition: 200ms;
+  background-color: $secondary;
+}
+
+.new-transaction__close-icon {
+  cursor: pointer;
+  font-size: 2rem;
+  height: 2rem;
+  margin-left: auto;
+  transition: 0.3s ease-in-out;
+  width: 2rem;
+
+  &:hover {
+    color: $dark-color;
+    transition: 0.3s ease-in-out;
+  }
+}
