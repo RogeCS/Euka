@@ -1,32 +1,58 @@
 import React from "react";
+import { connect } from "react-redux";
+import { setTransaction, setTotalBalance } from "../actions";
 import { MdClose } from "react-icons/md";
+import { BiTransfer } from "react-icons/bi";
 
 import "../styles/components/NewTransaction.scss";
 
-const NewTransaction = ({ transaction, onClick }) => {
+const NewTransaction = (props) => {
+  const { transaction, onClick } = props;
   const [isIncome, setIsIncome] = React.useState(false);
   const [description, setDescription] = React.useState("");
-  const [amount, setAmount] = React.useState("");
+  const [amountOfTransaction, setAmount] = React.useState("");
 
   const handleDescription = (e) => setDescription(e.target.value);
   const handleAmount = (e) => setAmount(e.target.value);
   const makeIncome = () => setIsIncome(true);
   const makeExpense = () => setIsIncome(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      `Income: ${isIncome}\nDescription: ${description}\nAmount: ${amount}`
-    );
+    handleNewTransaction();
     onClick();
   };
+  React.useEffect(() => {
+    handleSetTotalBalance();
+  });
 
-  const handleKeyPress = (e) => {
-    //it triggers by pressing the enter key
-    if (e.keyCode === 13) {
-      handleSubmit();
-    }
+  const handleSetTotalBalance = () => {
+    let newTotalBalance = 0;
+    props.transactionsList.forEach((item) => {
+      if (item.income) newTotalBalance += item.amount;
+      if (!item.income) newTotalBalance -= item.amount;
+    });
+    props.setTotalBalance(newTotalBalance);
   };
+
+  const handleNewTransaction = () => {
+    let title = description;
+    let type = "Subscription";
+    let date = "2018-01-01";
+    let amount = parseFloat(amountOfTransaction.replace(/[^\d.-]/g, ""), 10);
+    let income = isIncome;
+    let icon = <BiTransfer />;
+    let color = "#f39531";
+    props.setTransaction({
+      title,
+      type,
+      date,
+      amount,
+      income,
+      icon,
+      color,
+    });
+  };
+
   return (
     <div
       className={` new-transaction ${
@@ -73,6 +99,7 @@ const NewTransaction = ({ transaction, onClick }) => {
               autoComplete="off"
               value={description}
               onChange={handleDescription}
+              maxlength="30"
               required
             />
           </div>
@@ -86,8 +113,9 @@ const NewTransaction = ({ transaction, onClick }) => {
               className="new-transaction__form-field"
               placeholder="ex: 1,000.00"
               autoComplete="off"
-              value={amount}
+              value={amountOfTransaction}
               onChange={handleAmount}
+              maxlength="20"
               required
             />
           </div>
@@ -103,4 +131,15 @@ const NewTransaction = ({ transaction, onClick }) => {
   );
 };
 
-export default NewTransaction;
+const mapDispatchToProps = {
+  setTransaction,
+  setTotalBalance,
+};
+
+const mapStateToProps = (state) => {
+  return {
+    transactionsList: state.transactionsList,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewTransaction);

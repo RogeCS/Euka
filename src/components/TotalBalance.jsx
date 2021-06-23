@@ -1,8 +1,10 @@
 import React from "react";
 import { BsThreeDots } from "react-icons/bs";
+import { connect } from "react-redux";
+import { numberWithCommas } from "../code/Functions";
 import "../styles/components/TotalBalance.scss";
 
-const TotalBalance = () => {
+const TotalBalance = ({ totalBalance }) => {
   return (
     <div className="total-balance">
       <div className="total-balance__content">
@@ -13,7 +15,9 @@ const TotalBalance = () => {
           </div>
         </div>
         <div className="amount-layout">
-          <h1 className="amount-layout__money">2,723.70</h1>
+          <h1 className="amount-layout__money">
+            {numberWithCommas(totalBalance.toFixed(2))}
+          </h1>
           <p className="amount-layout__currency">MXN</p>
         </div>
         <h2 className="total-balance__bottom-line">Total Balance</h2>
@@ -22,4 +26,10 @@ const TotalBalance = () => {
   );
 };
 
-export default TotalBalance;
+const mapStateToProps = (state) => {
+  return {
+    totalBalance: state.totalBalance,
+  };
+};
+
+export default connect(mapStateToProps, null)(TotalBalance);

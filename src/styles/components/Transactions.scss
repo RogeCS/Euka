@@ -75,8 +75,9 @@ $make-transactions-heigh: 80px;
   grid-column-start: 1;
   grid-column-end: 3;
   justify-self: end;
+  font-weight: 700;
   position: relative;
-  bottom: 35px;
+  bottom: 25px;
 }
 
 .transaction__amount--expense {

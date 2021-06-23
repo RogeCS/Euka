@@ -1,11 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import Button from "./Button.jsx";
 import NewTransaction from "./NewTransaction.jsx";
-import { TransactionsData } from "../code/TransactionsData";
 import { numberWithCommas } from "../code/Functions.js";
 import "../styles/components/Transactions.scss";
 
-const Transactions = () => {
+const Transactions = ({ transactionsList }) => {
   const [transaction, setTransaction] = React.useState(false);
   const handleClick = () => {
     setTransaction(!transaction);
@@ -20,9 +20,9 @@ const Transactions = () => {
       </div>
       <div className="transactions">
         <ul className="transactions__list">
-          {TransactionsData.map((val, key) => (
+          {transactionsList.map((val, key) => (
             <li key={key} className="transaction__bullet">
-              <div className="transaction__thumbnail">{val.img}</div>
+              <div className="transaction__thumbnail">{val.icon}</div>
               <div className="transaction__content">
                 <h1 className="transaction__title">{val.title}</h1>
                 <p className="transaction__date">{val.date}</p>
@@ -32,7 +32,9 @@ const Transactions = () => {
                   !val.income ? "transaction__amount--expense" : ""
                 }`}
               >
-                {`${val.income ? "+" : "-"} ${numberWithCommas(val.amount)}`}
+                {`${val.income ? "+" : "-"} ${numberWithCommas(
+                  val.amount.toFixed(2)
+                )}`}
                 <span> MXN </span>
               </p>
             </li>
@@ -44,4 +46,11 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+const mapStateToProps = (state) => {
+  return {
+    totalBalance: state.totalBalance,
+    transactionsList: state.transactionsList,
+  };
+};
+
+export default connect(mapStateToProps, null)(Transactions);
