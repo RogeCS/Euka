@@ -99,7 +99,7 @@ const NewTransaction = (props) => {
               autoComplete="off"
               value={description}
               onChange={handleDescription}
-              maxlength="30"
+              maxLength="30"
               required
             />
           </div>
@@ -115,7 +115,7 @@ const NewTransaction = (props) => {
               autoComplete="off"
               value={amountOfTransaction}
               onChange={handleAmount}
-              maxlength="20"
+              maxLength="20"
               required
             />
           </div>
