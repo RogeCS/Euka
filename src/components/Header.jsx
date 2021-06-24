@@ -51,13 +51,13 @@ const Header = (props) => {
               <img src={userIcon} alt="User icon" />
             )}
           </div>
-          <ul>
+          <ul className="header__menu-list">
             {hasUser ? (
               <>
-                <li>
+                <li className="header__menu-bullet">
                   <a href="/">Cuenta</a>
                 </li>
-                <li>
+                <li className="header__menu-bullet">
                   <a href="#logout" onClick={handleLogout}>
                     Log out
                   </a>
@@ -65,7 +65,7 @@ const Header = (props) => {
               </>
             ) : (
               <>
-                <li>
+                <li className="header__menu-bullet">
                   <Link to="/login">Log in</Link>
                 </li>
               </>
