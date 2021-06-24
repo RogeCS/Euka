@@ -16,22 +16,19 @@ const NewTransaction = (props) => {
   const handleAmount = (e) => setAmount(e.target.value);
   const makeIncome = () => setIsIncome(true);
   const makeExpense = () => setIsIncome(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleNewTransaction();
+    handleSetTotalBalance();
     onClick();
   };
   React.useEffect(() => {
     handleSetTotalBalance();
-  });
+  }, []);
 
   const handleSetTotalBalance = () => {
-    let newTotalBalance = 0;
-    props.transactionsList.forEach((item) => {
-      if (item.income) newTotalBalance += item.amount;
-      if (!item.income) newTotalBalance -= item.amount;
-    });
-    props.setTotalBalance(newTotalBalance);
+    props.setTotalBalance();
   };
 
   const handleNewTransaction = () => {

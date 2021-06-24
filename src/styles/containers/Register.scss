@@ -1,19 +1,19 @@
 @import "../global/variables.scss";
 
-.login-container {
+.register-container {
   width: 100vw;
   height: 100vh;
   display: grid;
   place-content: center;
 }
 
-.login-container__box {
+.register-container__box {
   position: relative;
   height: 500px;
   width: 400px;
   border-radius: 10px;
   box-shadow: $box-shadow;
-  background-color: $white;
+  background-color: $dark-color;
   padding: 60px;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
   justify-content: space-around;
 }
 
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,39 +31,26 @@
   width: 100%;
 }
 
-.login-form__input {
+.register-form__input {
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid $gray;
+  border-bottom: 1px solid $light-gray;
   outline: 0;
   font-size: 1rem;
   font-weight: 700;
-  color: $dark-color;
+  color: $white;
   background: transparent;
   transition: border-color 0.2s;
 
   &::placeholder {
-    color: $dark-gray;
+    color: $light-gray;
     font-weight: 300;
     font-size: 0.9rem;
   }
 }
 
-.login-form__forgot-link {
-  position: relative;
-  top: -45px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  color: $dark-gray;
-  &:hover {
-    color: $dark-color;
-    transition: all 0.3s ease-in-out;
-  }
-}
-
-.login-form__register-link {
+.register-form__login-link {
   position: absolute;
   bottom: 20px;
   display: flex;
@@ -72,7 +59,7 @@
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  color: $black;
+  color: $white;
   &:hover {
     color: $secondary;
     gap: 10px;

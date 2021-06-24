@@ -7,9 +7,14 @@ const reducer = (state, action) => {
       };
 
     case "SET_TOTAL_BALANCE":
+      let tempTotalBalance = 0;
+      state.transactionsList.forEach((item) => {
+        if (item.income) tempTotalBalance += item.amount;
+        if (!item.income) tempTotalBalance -= item.amount;
+      });
       return {
         ...state,
-        totalBalance: action.payload,
+        totalBalance: tempTotalBalance,
       };
 
     case "LOGIN_REQUEST":
@@ -19,6 +24,12 @@ const reducer = (state, action) => {
       };
 
     case "LOGOUT_REQUEST":
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case "REGISTER_REQUEST":
       return {
         ...state,
         user: action.payload,

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginRequest } from "../actions/index.js";
+import { AiFillCaretRight } from "react-icons/ai";
 import Logo from "../components/Logo.jsx";
 import Button from "../components/Button.jsx";
 
@@ -28,7 +29,7 @@ const Login = (props) => {
   return (
     <div className="login-container">
       <div className="login-container__box">
-        <Logo />
+        <Logo color="primary" />
         <form className="login-form" onSubmit={handleSubmit}>
           <input
             className="login-form__input"
@@ -50,6 +51,10 @@ const Login = (props) => {
         </form>
         <Link to="#" className="login-form__forgot-link">
           <p className="login-form__forgot"> forgot password?</p>
+        </Link>
+        <Link to="/register" className="login-form__register-link">
+          <p className="login-form__register"> Register</p>
+          <AiFillCaretRight />
         </Link>
       </div>
     </div>
