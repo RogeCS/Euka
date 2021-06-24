@@ -1,13 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { loginRequest } from "../actions/index.js";
+import Logo from "../components/Logo.jsx";
+import Button from "../components/Button.jsx";
 
 import "../styles/containers/Login.scss";
 
-const Login = () => {
+const Login = (props) => {
+  const [form, setValues] = useState({
+    email: "",
+  });
+
+  const handleInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.loginRequest(form);
+    props.history.push("/");
+  };
+
   return (
-    <div>
-      <div>login</div>
+    <div className="login-container">
+      <div className="login-container__box">
+        <Logo />
+        <form className="login-form" onSubmit={handleSubmit}>
+          <input
+            className="login-form__input"
+            type="text"
+            placeholder="mail"
+            name="email"
+            onChange={handleInput}
+            required
+          />
+          <input
+            className="login-form__input"
+            type="password"
+            placeholder="password"
+            name="password"
+            onChange={handleInput}
+            required
+          />
+          <Button color="primary" text="LogIn" link="#" />
+        </form>
+        <Link to="#" className="login-form__forgot-link">
+          <p className="login-form__forgot"> forgot password?</p>
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default Login;
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);

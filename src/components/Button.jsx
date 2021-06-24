@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/components/Button.scss";
 
-const Button = ({ title, type, onClick }) => {
+const Button = ({ text, color, link, onClick }) => {
   return (
-    <div
-      className={`button ${type == "secondary" ? "button--secondary" : ""}`}
+    <button
+      className={`button ${color == "secondary" ? "button--secondary" : ""}`}
       onClick={onClick}
     >
-      <p className="button__text">{title}</p>
-    </div>
+      <p className="button__text">{text}</p>
+    </button>
   );
 };
 

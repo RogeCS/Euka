@@ -15,8 +15,13 @@ const Transactions = ({ transactionsList }) => {
     <div className="transactions-layout">
       <NewTransaction transaction={transaction} onClick={handleClick} />
       <div className="make-transaction">
-        <Button title="new transaction" type="primary" onClick={handleClick} />
-        <Button title="settings" type="secondary" />
+        <Button
+          text="new transaction"
+          color="primary"
+          onClick={handleClick}
+          link="#"
+        />
+        <Button text="settings" color="secondary" link="#" />
       </div>
       <div className="transactions">
         <ul className="transactions__list">

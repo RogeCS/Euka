@@ -11,7 +11,7 @@ export const SidebarData = [
   {
     title: "Analytics",
     icon: <ImStatsDots />,
-    link: "/analytics",
+    link: "/login",
   },
   {
     title: "Mailbox",

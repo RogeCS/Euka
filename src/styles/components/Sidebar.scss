@@ -3,6 +3,7 @@
 .dashboard-sidebar {
   height: 100vh;
   min-width: $sidebar-width;
+  width: $sidebar-width;
   background-color: $white;
   position: fixed;
   z-index: 999;
@@ -59,6 +60,10 @@
   height: auto;
   padding: 0;
   width: 100%;
+}
+
+.dashboard-sidebar__link {
+  text-decoration: none;
 }
 
 .dashboard-sidebar__row {

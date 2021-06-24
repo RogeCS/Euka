@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "../code/SidebarData";
@@ -27,28 +28,27 @@ const Sidebar = ({ sidebar, toggleSidebar }) => {
       </span>
       <ul className="dashboard-sidebar__list">
         {SidebarData.map((val, key) => (
-          <li
-            key={key}
-            className={`dashboard-sidebar__row ${
-              window.location.pathname == val.link
-                ? "dashboard-sidebar__row--active"
-                : ""
-            }`}
-            onClick={() => {
-              window.location.pathname = val.link;
-            }}
-          >
-            <span className="dashboard-sidebar__icon">{val.icon}</span>
-            <div
-              className={`dashboard-sidebar__title ${
+          <Link className="dashboard-sidebar__link" key={key} to={val.link}>
+            <li
+              key={key}
+              className={`dashboard-sidebar__row ${
                 window.location.pathname == val.link
-                  ? "dashboard-sidebar__title--active"
+                  ? "dashboard-sidebar__row--active"
                   : ""
               }`}
             >
-              {val.title}
-            </div>
-          </li>
+              <span className="dashboard-sidebar__icon">{val.icon}</span>
+              <div
+                className={`dashboard-sidebar__title ${
+                  window.location.pathname == val.link
+                    ? "dashboard-sidebar__title--active"
+                    : ""
+                }`}
+              >
+                {val.title}
+              </div>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>

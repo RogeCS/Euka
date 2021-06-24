@@ -1,10 +1,21 @@
 import React from "react";
-import { FiLogOut } from "react-icons/fi";
+import { connect } from "react-redux";
+import gravatar from "../utils/gravatar";
 import { MdNotifications, MdInbox, MdSearch } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { logoutRequest } from "../actions";
+import userIcon from "../assets/static/icons8-usuario-90.png";
 
 import "../styles/components/Header.scss";
 
-const Header = ({ sidebar }) => {
+const Header = (props) => {
+  const { sidebar, user } = props;
+  const hasUser = Object.keys(user).length > 0;
+
+  const handleLogout = () => {
+    props.logoutRequest({});
+  };
+
   return (
     <div
       className={`dashboard-header ${
@@ -20,29 +31,60 @@ const Header = ({ sidebar }) => {
         ></input>
       </div>
       <nav className="dashboard-navbar">
-        <ul className="dashboard-navbar__list">
-          <li className="dashboard-navbar__bullet">
+        <div className="dashboard-navbar__list">
+          <div className="dashboard-navbar__bullet">
             <a href="/" className="dashboard-navbar__link">
               <MdInbox />
             </a>
-          </li>
-          <li className="dashboard-navbar__bullet">
+          </div>
+          <div className="dashboard-navbar__bullet">
             <a href="/" className="dashboard-navbar__link">
               <MdNotifications />
             </a>
-          </li>
-          <li className="dashboard-navbar__bullet">
-            <a href="/" className="dashboard-navbar__link">
-              <div className="logout">
-                <FiLogOut />
-                <p className="logout__text">log out</p>
-              </div>
-            </a>
-          </li>
-        </ul>
+          </div>
+        </div>
+        <div className="header__menu">
+          <div className="header__menu--profile">
+            {hasUser ? (
+              <img src={gravatar(user.email)} alt={user.email} />
+            ) : (
+              <img src={userIcon} alt="User icon" />
+            )}
+          </div>
+          <ul>
+            {hasUser ? (
+              <>
+                <li>
+                  <a href="/">Cuenta</a>
+                </li>
+                <li>
+                  <a href="#logout" onClick={handleLogout}>
+                    Log out
+                  </a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login">Log in</Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
       </nav>
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+const mapDispatchToProps = {
+  logoutRequest,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

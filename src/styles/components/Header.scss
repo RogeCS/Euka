@@ -9,12 +9,12 @@
   justify-content: space-between;
   padding: 0 25px 0 50px;
   transition: 200ms;
-  width: 100vw;
+  width: 100%;
 }
 
 .dashboard-header--margin {
   margin-left: $sidebar-width;
-  width: calc(100vw - #{$sidebar-width});
+  width: calc(100% - #{$sidebar-width});
   transition: 200ms;
 }
 
@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   color: $dark-gray;
+  font-size: 1.2rem;
 }
 
 .dashboard-header__search-input {
@@ -51,6 +52,7 @@
 .dashboard-navbar__bullet {
   margin: 0 10px;
   display: flex;
+  font-size: 1.2rem;
 }
 
 .dashboard-navbar__link {
@@ -66,17 +68,55 @@
   }
 }
 
-.logout {
-  display: flex;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-
-  &:hover {
-    color: $secondary;
-    transition: 0.3s ease-in-out;
-  }
+.header__menu {
+  margin-right: 0px;
 }
 
-.logout__text {
-  margin-left: 5px;
+.header__menu ul {
+  display: none;
+  list-style: none;
+  margin: 0px 0px 0px -60px;
+  padding: 0px;
+  position: absolute;
+  width: 100px;
+  text-align: right;
+}
+
+.header__menu:hover ul,
+ul:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  box-shadow: $box-shadow;
+}
+
+.header__menu li {
+  margin: 10px 0px;
+}
+
+.header__menu li a {
+  color: $dark-color;
+  text-decoration: none;
+}
+
+.header__menu li a:hover {
+  text-decoration: underline;
+}
+
+.header__menu--profile {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid $dark-gray;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.header__menu--profile img {
+  width: 2rem;
+  height: 2rem;
 }
