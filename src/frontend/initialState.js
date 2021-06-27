@@ -1,7 +1,7 @@
 import React from "react";
 import { BiTransfer } from "react-icons/bi";
 
-export const initialState = {
+const initialState = {
   user: {},
   totalBalance: 0,
   transactionsList: [
@@ -25,3 +25,5 @@ export const initialState = {
     },
   ],
 };
+
+export default initialState;

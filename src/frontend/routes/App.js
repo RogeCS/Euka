@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, HashRouter, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Dashboard from "../components/Dashboard.jsx";
 import Login from "../containers/Login.jsx";
 import Register from "../containers/Register.jsx";
@@ -11,7 +11,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Dashboard} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/Register" component={Register} />
+      <Route exact path="/register" component={Register} />
     </Switch>
   </BrowserRouter>
 );

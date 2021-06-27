@@ -7,6 +7,12 @@ import { SidebarData } from "../code/SidebarData";
 import "../styles/components/Sidebar.scss";
 
 const Sidebar = ({ sidebar, toggleSidebar }) => {
+  const [windowLocation, setWindowLocation] = React.useState(0);
+
+  React.useEffect(() => {
+    setWindowLocation(window.location.pathname);
+  });
+
   return (
     <div
       className={
@@ -32,7 +38,7 @@ const Sidebar = ({ sidebar, toggleSidebar }) => {
             <li
               key={key}
               className={`dashboard-sidebar__row ${
-                window.location.pathname == val.link
+                windowLocation == val.link
                   ? "dashboard-sidebar__row--active"
                   : ""
               }`}
@@ -40,7 +46,7 @@ const Sidebar = ({ sidebar, toggleSidebar }) => {
               <span className="dashboard-sidebar__icon">{val.icon}</span>
               <div
                 className={`dashboard-sidebar__title ${
-                  window.location.pathname == val.link
+                  windowLocation == val.link
                     ? "dashboard-sidebar__title--active"
                     : ""
                 }`}

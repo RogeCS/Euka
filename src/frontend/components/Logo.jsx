@@ -1,6 +1,6 @@
 import React from "react";
-import DarkLogo from "../assets/static/euka-dark-logo.svg";
-import LightLogo from "../assets/static/euka-light-logo.svg";
+import DarkLogo from "../assets/static/darkIcon.png";
+import LightLogo from "../assets/static/lightIcon.png";
 
 import "../styles/components/Logo.scss";
 
