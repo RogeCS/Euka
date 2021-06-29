@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { loginRequest } from "../actions/index.js";
+import { useSSRMounted } from "../hooks/ssr-mounted.jsx";
+import { loginUser } from "../actions/index.js";
 import { AiFillCaretRight } from "react-icons/ai";
 import Logo from "../components/Logo.jsx";
 import Button from "../components/Button.jsx";
@@ -22,9 +23,11 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
-    props.history.push("/");
+    props.loginUser(form, "/");
   };
+
+  const isSsr = useSSRMounted();
+  if (isSsr) return null;
 
   return (
     <div className="login-container">
@@ -62,7 +65,7 @@ const Login = (props) => {
 };
 
 const mapDispatchToProps = {
-  loginRequest,
+  loginUser,
 };
 
 export default connect(null, mapDispatchToProps)(Login);

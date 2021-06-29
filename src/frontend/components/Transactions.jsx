@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useSSRMounted } from "../hooks/ssr-mounted.jsx";
 import Button from "./Button.jsx";
 import NewTransaction from "./NewTransaction.jsx";
 import { numberWithCommas } from "../code/Functions.js";
@@ -10,6 +11,9 @@ const Transactions = ({ transactionsList }) => {
   const handleClick = () => {
     setTransaction(!transaction);
   };
+
+  const isSsr = useSSRMounted();
+  if (isSsr) return null;
 
   return (
     <div className="transactions-layout">
@@ -25,25 +29,26 @@ const Transactions = ({ transactionsList }) => {
       </div>
       <div className="transactions">
         <ul className="transactions__list">
-          {transactionsList.map((val, key) => (
-            <li key={key} className="transaction__bullet">
-              <div className="transaction__thumbnail">{val.icon}</div>
-              <div className="transaction__content">
-                <h1 className="transaction__title">{val.title}</h1>
-                <p className="transaction__date">{val.date}</p>
-              </div>
-              <p
-                className={`transaction__amount ${
-                  !val.income ? "transaction__amount--expense" : ""
-                }`}
-              >
-                {`${val.income ? "+" : "-"} ${numberWithCommas(
-                  val.amount.toFixed(2)
-                )}`}
-                <span> MXN </span>
-              </p>
-            </li>
-          ))}
+          {transactionsList.length > 0 &&
+            transactionsList.map((val, key) => (
+              <li key={key} className="transaction__bullet">
+                <div className="transaction__thumbnail">{val.icon}</div>
+                <div className="transaction__content">
+                  <h1 className="transaction__title">{val.title}</h1>
+                  <p className="transaction__date">{val.date}</p>
+                </div>
+                <p
+                  className={`transaction__amount ${
+                    !val.income ? "transaction__amount--expense" : ""
+                  }`}
+                >
+                  {`${val.income ? "+" : "-"} ${numberWithCommas(
+                    val.amount.toFixed(2)
+                  )}`}
+                  <span> MXN </span>
+                </p>
+              </li>
+            ))}
         </ul>
         <div className="transactions__end"></div>
       </div>

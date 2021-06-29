@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { useSSRMounted } from "../hooks/ssr-mounted.jsx";
 import { AiFillCaretLeft } from "react-icons/ai";
-import { registerRequest } from "../actions";
+import { registerUser } from "../actions";
 import Logo from "../components/Logo.jsx";
 import Button from "../components/Button.jsx";
 
@@ -13,6 +14,7 @@ const Register = (props) => {
     email: "",
     name: "",
     password: "",
+    isAdmin: false,
   });
 
   const handleInput = (event) => {
@@ -24,9 +26,11 @@ const Register = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.registerRequest(form);
-    props.history.push("/");
+    props.registerUser(form, "/login");
   };
+
+  const isSsr = useSSRMounted();
+  if (isSsr) return null;
 
   return (
     <div className="register-container">
@@ -69,7 +73,7 @@ const Register = (props) => {
 };
 
 const mapDispatchToProps = {
-  registerRequest,
+  registerUser,
 };
 
 export default connect(null, mapDispatchToProps)(Register);

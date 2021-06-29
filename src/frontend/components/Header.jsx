@@ -13,7 +13,12 @@ const Header = (props) => {
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
+    document.cookie = "email=";
+    document.cookie = "name=";
+    document.cookie = "id=";
+    document.cookie = "token=";
     props.logoutRequest({});
+    window.location.href = "/login";
   };
 
   return (
@@ -55,7 +60,7 @@ const Header = (props) => {
             {hasUser ? (
               <>
                 <li className="header__menu-bullet">
-                  <a href="/">Cuenta</a>
+                  <a href="/">{user.name}</a>
                 </li>
                 <li className="header__menu-bullet">
                   <a href="#logout" onClick={handleLogout}>
