@@ -64,11 +64,12 @@ const setResponse = (html, preloadedState, manifest) => {
   <!doctype html>
   <html>
     <head>
-      <link rel="stylesheet" href=${mainStyles} type="text/css">
+      <link rel="stylesheet" href=${mainStyles} type="text/css" />
       <meta charset="UTF-8" />
       <meta name="description" content="Personal budget tracker app">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="id=edge" />
+      <link rel="shortcut icon" href="https://i.imgur.com/GkvfRTa.png" />
       <title>euka</title>
     </head>
     <body>
