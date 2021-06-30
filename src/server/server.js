@@ -183,7 +183,7 @@ app.post("/auth/sign-up", async function (req, res, next) {
 
 app.get("*", renderApp);
 
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) console.log(err);
   else console.log(`server in mode ${ENV} is running on port ${PORT}`);
 });
