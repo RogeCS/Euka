@@ -1,0 +1,12 @@
+{
+  "name": "euka frontend",
+  "version": 2,
+  "builds": [{ "src": "src/server/index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "src/server/index.js" }],
+  "env": {
+    "PORT": "@euka-frontend-port",
+    "ENV": "@euka-frontend-env",
+    "API_URL": "@euka-frontend-api-url",
+    "API_KEY_TOKEN": "@euka-frontend-api-key-token"
+  }
+}
