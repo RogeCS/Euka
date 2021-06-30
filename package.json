@@ -87,7 +87,7 @@
       "\\.(scss|css|sass)$": "<rootDir>/src/frontend/__mocks__/styleMock.js"
     },
     "engines": {
-      "node": "15.3.0",
+      "node": "16.x",
       "npm": "7.10.0"
     }
   }
