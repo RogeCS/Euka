@@ -34,7 +34,7 @@ const Sidebar = ({ sidebar, toggleSidebar }) => {
       </span>
       <ul className="dashboard-sidebar__list">
         {SidebarData.map((val, key) => (
-          <Link className="dashboard-sidebar__link" key={key} to={val.link}>
+          <a className="dashboard-sidebar__link" key={key} href={val.link}>
             <li
               key={key}
               className={`dashboard-sidebar__row ${
@@ -54,7 +54,7 @@ const Sidebar = ({ sidebar, toggleSidebar }) => {
                 {val.title}
               </div>
             </li>
-          </Link>
+          </a>
         ))}
       </ul>
     </div>

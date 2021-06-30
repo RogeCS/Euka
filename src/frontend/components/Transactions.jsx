@@ -39,10 +39,10 @@ const Transactions = ({ transactionsList }) => {
                 </div>
                 <p
                   className={`transaction__amount ${
-                    !val.income ? "transaction__amount--expense" : ""
+                    !val.isIncome ? "transaction__amount--expense" : ""
                   }`}
                 >
-                  {`${val.income ? "+" : "-"} ${numberWithCommas(
+                  {`${val.isIncome ? "+" : "-"} ${numberWithCommas(
                     val.amount.toFixed(2)
                   )}`}
                   <span> MXN </span>

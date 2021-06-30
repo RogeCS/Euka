@@ -85,21 +85,29 @@ const setResponse = (html, preloadedState, manifest) => {
   </html>`;
 };
 
-const renderApp = (req, res) => {
+const renderApp = async (req, res) => {
   let initialState;
-  const { email, name, id } = req.cookies;
+  const { token, email, name, id } = req.cookies;
 
-  if (id) {
+  try {
+    let transactionList = await axios({
+      url: `${API_URL}/api/transactions`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: "get",
+    });
+    let transactions = transactionList.data.data;
     initialState = {
       user: {
+        id,
         email,
         name,
-        id,
       },
       totalBalance: 0,
-      transactionsList: [],
+      transactionsList: transactions,
     };
-  } else {
+  } catch (error) {
     initialState = {
       user: {},
       totalBalance: 0,
