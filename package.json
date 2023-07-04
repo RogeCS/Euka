@@ -16,7 +16,7 @@
   "author": "Oscar Rogelio Medina Lopez",
   "license": "MIT",
   "dependencies": {
-    "@babel/eslint-parser": "^7.14.2",
+    "@babel/eslint-parser": "^7.22.6",
     "@babel/polyfill": "^7.12.1",
     "@babel/register": "^7.14.5",
     "@hapi/boom": "^9.1.2",
