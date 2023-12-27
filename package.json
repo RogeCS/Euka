@@ -21,7 +21,7 @@
     "@babel/register": "^7.14.5",
     "@hapi/boom": "^9.1.2",
     "asset-require-hook": "^1.2.0",
-    "axios": "^0.21.1",
+    "axios": "^1.6.3",
     "babel-plugin-import": "^1.13.3",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
